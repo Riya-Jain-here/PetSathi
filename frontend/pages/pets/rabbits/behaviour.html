@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Understand rabbit behaviour, natural activities, social needs and safe enrichment ideas.">
+  <meta name="theme-color" content="#f7f8f2">
+  <title>Rabbit Behaviour &amp; Enrichment | PetSathi</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/global.css">
+  <link rel="stylesheet" href="../../../css/home.css">
+  <link rel="stylesheet" href="../../../css/inner.css">
+
+  <style>
+    :root {
+      --cream: #fbfaf6;
+      --paper: #ffffff;
+      --sage: #eef2e9;
+      --sage-dark: #dce7d9;
+      --green: #246747;
+      --green-dark: #173e2e;
+      --ink: #26382f;
+      --muted: #718078;
+      --line: #e5e9e1;
+      --gold: #d49b48;
+      --shadow: 0 12px 35px rgba(34, 61, 45, .07);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    body {
+      margin: 0;
+      background: var(--rabbit-cream);
+      color: var(--rabbit-ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    a { color: inherit; }
+    button { font: inherit; }
+
+    .behaviour-page { overflow: hidden; }
+    .container { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px;
+      color: var(--green); font-size: .76rem; font-weight: 800;
+      letter-spacing: .19em; text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 24px; height: 2px; background: #8cae91; }
+    .hero { padding: 76px 0 48px; }
+    .hero-grid { display: flex; align-items: center;  justify-content: center; gap: 100px;}
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 760px; margin: 18px 0 18px; color: var(--ink);
+      font-size: clamp(2.55rem, 5.4vw, 4.65rem); line-height: 1.08;
+      letter-spacing: -.055em; font-weight: 760;
+    }
+    h1 span { color: var(--green); }
+    .hero-copy { max-width: 700px; color: #738078; font-size: 1.12rem; line-height: 1.85; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      min-height: 48px; padding: 0 20px; border-radius: 999px;
+      text-decoration: none; font-weight: 750; transition: transform .2s, background .2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--green); color: white; }
+    .btn-primary:hover { background: var(--green-dark); }
+    .btn-secondary { color: var(--green-dark); border: 1px solid #dce5da; background: white; }
+    .hero-art {
+       width: 600px; min-height: 330px; position: relative; display: grid; place-items: center;
+      border-radius: 42% 42% 30px 30px; overflow: hidden;
+      background: radial-gradient(circle at 50% 42%, #fff 0 22%, transparent 22.5%),
+                  linear-gradient(145deg, #e8eee2, #dce8d8);
+    }
+    .hero-art::before, .hero-art::after {
+      content: ""; position: absolute; border-radius: 50%; background: rgba(255,255,255,.45);
+    }
+    .hero-art::before { width: 220px; height: 220px; top: 28px; right: -65px; }
+    .hero-art::after { width: 150px; height: 150px; bottom: -35px; left: -25px; }
+    .rabbit-illustration { position: relative; z-index: 1; font-size: clamp(8rem, 17vw, 13rem); filter: drop-shadow(0 15px 12px rgba(45,67,48,.13)); }
+    .art-note {
+      position: absolute; z-index: 2; bottom: 25px; right: 22px;
+      padding: 10px 15px; background: rgba(255,255,255,.9); border: 1px solid white;
+      border-radius: 16px; color: var(--green-dark); font-size: .83rem; font-weight: 750;
+      box-shadow: var(--shadow);
+    }
+    .quick-nav {
+      position: sticky; top: 0; z-index: 20; background: rgba(251,250,246,.93);
+      backdrop-filter: blur(12px); border-top: 1px solid rgba(229,233,225,.8);
+      border-bottom: 1px solid var(--line);
+    }
+    .quick-nav-inner { display: flex; gap: 8px; overflow-x: auto; padding: 13px 0; scrollbar-width: thin; }
+    .quick-nav a {
+      flex: 0 0 auto; padding: 9px 15px; border-radius: 999px; color: #65756b;
+      text-decoration: none; font-size: .88rem; font-weight: 700; transition: .2s;
+    }
+    .quick-nav a:hover, .quick-nav a.active { color: var(--green-dark); background: var(--sage); }
+
+    .section { padding: 82px 0; }
+    .section.alt { background: #f2f4ee;}
+    .section-heading { display: flex; align-items: flex-start; text-align: left; flex-direction: column;  max-width: 600px; margin-bottom: 34px; }
+    .section-heading h2 {
+      margin: 13px 0 12px; font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15; letter-spacing: -.04em;
+    }
+    .section-heading p { color: var(--muted); font-size: 1.05rem; margin-bottom: 0; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; }
+    .info-card {
+      padding: 27px; background: var(--paper); border: 1px solid var(--line);
+      border-radius: var(--radius); box-shadow: 0 5px 20px rgba(34,61,45,.025);
+    }
+    .card-top { display: flex; align-items: flex-start; gap: 17px; }
+    .icon-tile {
+      width: 58px; height: 58px; flex: 0 0 58px; display: grid; place-items: center;
+      border-radius: 18px; background: var(--sage); font-size: 1.75rem;
+    }
+    .info-card h3 { margin: 2px 0 8px; font-size: 1.18rem; line-height: 1.35; }
+    .info-card p { margin: 0; color: var(--muted); }
+    .tag {
+      display: inline-block; margin-top: 15px; padding: 5px 10px; border-radius: 99px;
+      background: #f3f6ef; color: var(--green); font-size: .76rem; font-weight: 800;
+    }
+    .body-language { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .language-card { display: flex; gap: 16px; align-items: flex-start; }
+    .language-card .icon-tile { width: 52px; height: 52px; flex-basis: 52px; font-size: 1.5rem; }
+    .language-card h3 { margin-bottom: 5px; }
+    .note {
+      margin-top: 22px; padding: 18px 21px; border-left: 4px solid #8cae91;
+      background: #edf3e9; border-radius: 0 15px 15px 0; color: #53665a;
+    }
+    .activity-card { overflow: hidden; padding: 0; }
+    .activity-visual {
+      min-height: 142px; display: grid; place-items: center;
+      background: linear-gradient(135deg, #edf2e8, #e2ebdc); font-size: 4.4rem;
+    }
+    .activity-card .card-content { padding: 23px 24px 26px; }
+    .activity-card h3 { margin-bottom: 8px; }
+    .activity-card p { color: var(--muted); margin-bottom: 0; }
+    .tip-list { margin: 13px 0 0; padding-left: 19px; color: var(--muted); }
+    .tip-list li { margin: 5px 0; }
+    .callout {
+      display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start;
+      margin-top: 25px; padding: 23px; border: 1px solid #e3e9dd;
+      border-radius: 20px; background: #fff;
+    }
+    .callout .icon-tile { background: #fff3df; }
+    .callout h3 { margin: 1px 0 5px; }
+    .callout p { color: var(--muted); margin: 0; }
+    .concern-card { border-top: 4px solid #d7b16d; }
+    .urgent-card { border-top: 4px solid #c97968; }
+    .steps { counter-reset: step; display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .step { position: relative; padding: 24px; border: 1px solid var(--line); border-radius: 20px; background: white; }
+    .step::before {
+      counter-increment: step; content: "0" counter(step); display: inline-grid; place-items: center;
+      width: 38px; height: 38px; margin-bottom: 14px; border-radius: 13px;
+      background: var(--sage); color: var(--green); font-weight: 850;
+    }
+    .step h3 { margin-bottom: 7px; }
+    .step p { color: var(--muted); margin: 0; }
+    .closing {
+      padding: 64px 24px; background: linear-gradient(135deg, #1d5039, #286849); color: #fff; text-align: center;
+    }
+    .closing h2 { margin-bottom: 10px; font-size: clamp(1.8rem, 3vw, 2.5rem); }
+    .closing p { max-width: 670px; margin: 0 auto 22px; color: #d5e2d8; }
+    .closing .btn { background: white; color: var(--green); }
+    .back-top {
+      position: fixed; right: 22px; bottom: 22px; z-index: 30; width: 46px; height: 46px;
+      border: 0; border-radius: 50%; background: var(--green); color: white;
+      font-size: 1.25rem; cursor: pointer; box-shadow: var(--shadow);
+      opacity: 0; visibility: hidden; transform: translateY(8px); transition: .2s;
+    }
+    .back-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    @media (max-width: 850px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 30px; }
+      .hero-art { min-height: 260px; }
+      .grid-3 { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .steps { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .container { width: min(100% - 32px, 1180px); }
+      .hero { padding: 52px 0 38px; }
+      .hero-art { min-height: 220px; }
+      .section { padding: 60px 0; }
+      .grid-2, .grid-3, .body-language { grid-template-columns: 1fr; }
+      .info-card { padding: 22px; }
+      .closing { padding: 32px 22px; }
+      .quick-nav-inner { width: calc(100% - 32px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="../../../../index.html">
+            <span class="brand-mark">🐾</span>
+            <span>Pet<span>Sathi</span></span>
+        </a>
+        <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <nav class="main-nav">
+            <a href="../../../../index.html">Home</a>
+            <div class="nav-item">
+                <a class="active" href="../index.html">Explore Pets ▾</a>
+                <div class="dropdown">
+                    <a href="../dogs/index.html">🐕 Dogs</a>
+                    <a href="../cats/index.html">🐈 Cats</a>
+                    <a href="../birds/index.html">🐦 Birds</a>
+                    <a href="index.html">🐇 Rabbits</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="../../services/index.html">Services ▾</a>
+                <div class="dropdown">
+                    <a href="../../services/dog-walking.html">Dog Walking</a>
+                    <a href="../../services/cat-care.html">Cat Care</a>
+                    <a href="../../services/pet-care.html">Pet Care</a>
+                    <a href="../../services/guidance.html">Pet Guidance</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="../../walker/index.html">Find a Walker ▾</a>
+                <div class="dropdown">
+                    <a href="../../walker/dogs.html">Dog Walkers</a>
+                    <a href="../../walker/cats.html">Cat Caregivers</a>
+                    <a href="../../walker/birds.html">Bird Caregivers</a>
+                    <a href="../../walker/rabbits.html">Rabbit Caregivers</a>
+                </div>
+            </div>
+            <a href="../../about.html">About Us</a>
+            <a href="../../auth/login.html">Log in</a>
+            <a class="button button-small" href="../../auth/register.html">Get Started ↗</a>
+        </nav>
+    </header>
+
+  <main class="behaviour-page">
+
+    <header class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <h1>Rabbit Behaviour &amp; <span>Safe Enrichment</span></h1>
+          <p class="hero-copy">Rabbits express joy, curiosity, comfort and concern through their movements, sounds and everyday habits. Learn to read their signals and create a home where your companion can behave like a rabbit.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#understanding">Explore rabbit behaviour <span aria-hidden="true">↓</span></a>
+            <a class="btn btn-secondary" href="#enrichment">Find enrichment ideas</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Illustration of a happy rabbit in a garden" role="img">
+          <span class="rabbit-illustration" aria-hidden="true">🐇</span>
+          <span class="art-note">Curious noses, happy hops 🌿</span>
+        </div>
+      </div>
+    </header>
+
+    <nav class="quick-nav" aria-label="Page sections">
+      <div class="container quick-nav-inner">
+        <a href="#understanding">Understanding behaviour</a>
+        <a href="#activities">Natural activities</a>
+        <a href="#enrichment">Play &amp; enrichment</a>
+        <a href="#social">Social behaviour</a>
+        <a href="#concerns">Behavioural concerns</a>
+      </div>
+    </nav>
+
+    <section class="section" id="understanding">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Get to know your rabbit</span>
+          <h2>Understanding Rabbit Behaviour</h2>
+          <p>Rabbits are alert, expressive prey animals. Their posture, movement and sounds offer clues about how they are feeling. Always consider the whole situation and what is normal for your individual rabbit.</p>
+        </div>
+        <div class="grid-2">
+          <article class="info-card">
+            <div class="card-top">
+              <div class="icon-tile" aria-hidden="true">🤸</div>
+              <div><h3>Binkies &amp; zoomies</h3><p>A binky is a joyful leap or twist in the air. Zoomies are sudden bursts of running. These often appear when a rabbit feels energetic, playful and comfortable.</p><span class="tag">Often a happy sign</span></div>
+            </div>
+          </article>
+          <article class="info-card">
+            <div class="card-top">
+              <div class="icon-tile" aria-hidden="true">😴</div>
+              <div><h3>The relaxed flop</h3><p>A rabbit may suddenly roll onto its side and stretch out. It can look dramatic, but is commonly a sign of relaxation when the rabbit otherwise seems well.</p><span class="tag">Rest &amp; comfort</span></div>
+            </div>
+          </article>
+          <article class="info-card">
+            <div class="card-top">
+              <div class="icon-tile" aria-hidden="true">🦷</div>
+              <div><h3>Tooth purring vs. grinding</h3><p>Very soft tooth-clicking while relaxed can signal contentment. Loud, persistent grinding—especially with a hunched posture or reduced appetite—can indicate pain and needs veterinary attention.</p><span class="tag">Listen to the difference</span></div>
+            </div>
+          </article>
+          <article class="info-card">
+            <div class="card-top">
+              <div class="icon-tile" aria-hidden="true">🐾</div>
+              <div><h3>Thumping &amp; hiding</h3><p>A forceful hind-foot thump can be an alarm signal. Hiding, freezing or staying unusually still may mean a rabbit feels frightened, stressed or unwell.</p><span class="tag">Check the surroundings</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="section-heading" style="margin-top:58px;">
+          <span class="eyebrow">Read the little signals</span>
+          <h2>What is your rabbit telling you?</h2>
+          <p>Look at ears, eyes, body position and context together. A single signal does not tell the whole story.</p>
+        </div>
+        <div class="body-language">
+          <article class="info-card language-card"><div class="icon-tile" aria-hidden="true">👂</div><div><h3>Forward or moving ears</h3><p>Often means your rabbit is listening or investigating something. Ears angled back can have different meanings depending on whether the body is relaxed or tense.</p></div></article>
+          <article class="info-card language-card"><div class="icon-tile" aria-hidden="true">🧘</div><div><h3>Loose, stretched posture</h3><p>A relaxed rabbit may stretch out, sit comfortably or rest with its feet tucked under its body.</p></div></article>
+          <article class="info-card language-card"><div class="icon-tile" aria-hidden="true">🫣</div><div><h3>Crouching or freezing</h3><p>A tightly crouched body, wide eyes or remaining motionless can be signs of fear. Give your rabbit space and reduce the source of stress.</p></div></article>
+          <article class="info-card language-card"><div class="icon-tile" aria-hidden="true">💗</div><div><h3>Nudging &amp; grooming</h3><p>A gentle nose nudge may be a request for attention or a way to investigate. Mutual grooming can be an important social bonding behaviour.</p></div></article>
+        </div>
+        <div class="note"><strong>Remember:</strong> Rabbits are individuals. Learn your rabbit’s usual routine and behaviour so you can notice changes early.</div>
+      </div>
+    </section>
+
+    <section class="section alt" id="activities">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Let them be rabbits</span>
+          <h2>Natural Activities</h2>
+          <p>In the wild, rabbits spend much of their day moving, searching for food, exploring and digging. A safe home environment should give them appropriate ways to express these natural behaviours.</p>
+        </div>
+        <div class="grid-3">
+          <article class="info-card activity-card"><div class="activity-visual" aria-hidden="true">⛏️</div><div class="card-content"><h3>Digging</h3><p>Digging is a normal instinct, not bad behaviour. Offer a supervised digging box filled with rabbit-safe shredded paper or child-safe soil without fertiliser or chemicals.</p></div></article>
+          <article class="info-card activity-card"><div class="activity-visual" aria-hidden="true">🐇</div><div class="card-content"><h3>Hopping &amp; running</h3><p>Give your rabbit a roomy, secure area with a non-slip surface to hop, stretch, sprint and explore every day. Keep wires and hazards out of reach.</p></div></article>
+          <article class="info-card activity-card"><div class="activity-visual" aria-hidden="true">🌱</div><div class="card-content"><h3>Exploring &amp; foraging</h3><p>Rabbits naturally search for food. Scatter part of their usual hay or measured daily greens around a safe area to encourage gentle exploration.</p></div></article>
+        </div>
+        <div class="callout"><div class="icon-tile" aria-hidden="true">🏡</div><div><h3>Create a rabbit-safe space</h3><p>Provide hiding places with more than one exit, a clean litter area, constant access to fresh hay and water, and room to move. Supervise new spaces and remove anything that could be chewed dangerously.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="enrichment">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Play, chew, discover</span>
+          <h2>Play &amp; Enrichment</h2>
+          <p>Enrichment keeps curious minds and busy teeth occupied. Rotate a few safe options and let your rabbit choose what interests them—never force interaction.</p>
+        </div>
+        <div class="grid-3">
+          <article class="info-card"><div class="icon-tile" aria-hidden="true">🧺</div><h3>Safe toys</h3><p>Choose simple items made for rabbits and check them regularly for damage.</p><ul class="tip-list"><li>Untreated willow or apple-wood chews from a reputable pet supplier</li><li>Plain cardboard tunnels and boxes</li><li>Seagrass or willow balls made for rabbits</li></ul></article>
+          <article class="info-card"><div class="icon-tile" aria-hidden="true">🥬</div><h3>Interactive activities</h3><p>Make everyday routines more interesting with gentle, food-based games.</p><ul class="tip-list"><li>Hide a few pieces of their usual greens in a forage mat</li><li>Place hay in more than one easy-to-reach spot</li><li>Offer a treat ball designed for rabbits, using their normal pellets</li></ul></article>
+          <article class="info-card"><div class="icon-tile" aria-hidden="true">📦</div><h3>DIY enrichment</h3><p>Try simple homemade activities using clean, rabbit-safe materials.</p><ul class="tip-list"><li>Stuff hay loosely into a plain cardboard tube</li><li>Make a low-sided digging box with shredded paper</li><li>Cut safe doorways in a plain cardboard hideout</li></ul></article>
+        </div>
+        <div class="note"><strong>Safety first:</strong> Avoid treated or painted wood, staples, tape, string, plastic that can be chewed and swallowed, toxic plants, and small parts that may cause choking or intestinal blockage. Supervise new toys and remove damaged items.</div>
+      </div>
+    </section>
+
+    <section class="section alt" id="social">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Companionship &amp; trust</span>
+          <h2>Social Behaviour</h2>
+          <p>Rabbits are social animals. Many benefit from a compatible rabbit companion, and they can also build trusting relationships with people through calm, patient interaction.</p>
+        </div>
+        <div class="grid-2">
+          <article class="info-card"><div class="card-top"><div class="icon-tile" aria-hidden="true">🐰</div><div><h3>Rabbit companionship</h3><p>A suitable bonded companion can provide social contact, grooming and resting together. Compatibility matters: rabbits should be properly introduced, and neutering is usually an important part of responsible bonding.</p></div></div></article>
+          <article class="info-card"><div class="card-top"><div class="icon-tile" aria-hidden="true">🤝</div><div><h3>Building trust with people</h3><p>Sit quietly at floor level, speak gently and let your rabbit approach. Offer suitable food by hand if they are comfortable. Avoid chasing, grabbing or picking them up unless necessary for care.</p></div></div></article>
+        </div>
+        <div class="section-heading" style="margin-top:48px;"><h2>Introducing rabbits safely</h2><p>Bonding can take time. Do not put unfamiliar rabbits together and leave them unsupervised.</p></div>
+        <div class="steps">
+          <article class="step"><h3>Prepare separately</h3><p>Arrange separate secure living spaces. Make sure both rabbits are healthy and discuss neutering and timing with a rabbit-savvy vet.</p></article>
+          <article class="step"><h3>Go gradually</h3><p>Allow them to become familiar with each other’s scent and begin short, closely supervised meetings in neutral territory.</p></article>
+          <article class="step"><h3>Watch and reassess</h3><p>Look for relaxed behaviour and positive interaction. If serious chasing, biting or fighting occurs, separate them safely and seek experienced bonding guidance.</p></article>
+        </div>
+        <div class="note"><strong>Important:</strong> Never force rabbits to share a space, and do not leave them together until they are reliably bonded. Ask a rabbit-experienced rescue or veterinarian for help if introductions are difficult.</div>
+      </div>
+    </section>
+
+    <section class="section" id="concerns">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Notice changes early</span>
+          <h2>Behavioural Concerns</h2>
+          <p>A change in behaviour can be a response to the environment, fear or pain. Rabbits often hide signs of illness, so changes from their normal routine deserve attention.</p>
+        </div>
+        <div class="grid-2">
+          <article class="info-card concern-card"><div class="card-top"><div class="icon-tile" aria-hidden="true">⚠️</div><div><h3>Possible signs of stress or fear</h3><p>Watch for repeated hiding, freezing, frantic attempts to escape, persistent thumping, aggression that is new, or a tense crouched posture. Check for loud noises, unfamiliar animals, lack of hiding places or unwanted handling.</p></div></div></article>
+          <article class="info-card concern-card"><div class="card-top"><div class="icon-tile" aria-hidden="true">🔎</div><div><h3>Unusual behaviour</h3><p>Take note of sudden changes in appetite, drinking, droppings, movement, grooming, toileting or social interaction. A rabbit that stops behaving normally may be unwell, not simply being difficult.</p></div></div></article>
+          <article class="info-card urgent-card"><div class="card-top"><div class="icon-tile" aria-hidden="true">🩺</div><div><h3>When to contact a veterinarian</h3><p>Contact a rabbit-savvy veterinarian promptly for reduced eating, fewer or smaller droppings, persistent tooth grinding, a hunched posture, unusual lethargy or signs of pain.</p></div></div></article>
+          <article class="info-card urgent-card"><div class="card-top"><div class="icon-tile" aria-hidden="true">🚨</div><div><h3>Do not wait for an emergency</h3><p>If your rabbit stops eating or producing droppings, has difficulty breathing, collapses, has a swollen abdomen or seems severely unwell, seek urgent veterinary care. Do not try to diagnose or treat the cause at home.</p></div></div></article>
+        </div>
+        <div class="callout"><div class="icon-tile" aria-hidden="true">📝</div><div><h3>Keep a simple behaviour diary</h3><p>Record changes in eating, droppings, activity and interactions, along with when they started. Photos or short videos can help your veterinarian understand what you have noticed.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="closing">
+          <h2>A happier rabbit starts with understanding</h2>
+          <p>Give your rabbit space to explore, safe ways to play, patient companionship and prompt care when something changes. Small daily choices can make a meaningful difference to their wellbeing.</p>
+          <h4>Continue exploring rabbit care with PetSathi.</h4>
+           <a class="btn" href="index.html">← Back to Rabbit Guide</a>
+        </div>
+      </div>
+    </section>
+    
+     <footer class="footer">
+        <div class="section-wrap footer-grid">
+            <div>
+                <a class="brand" href="../../../../index.html">🐾 Pet<span>Sathi</span></a>
+                <p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p>
+            </div>
+            <div>
+                <b>Explore</b>
+                <a href="../index.html">Pet Categories</a>
+                <a href="../../services/index.html">Services</a>
+                <a href="../../walker/index.html">Find a Walker</a>
+            </div>
+            <div>
+                <b>PetSathi</b>
+                <a href="../../about.html">About Us</a>
+                <a href="../../auth/login.html">Log in</a>
+                <a href="../../auth/register.html">Register</a>
+            </div>
+            <div>
+                <b>Rabbit Guides</b>
+                <a href="index.html">Rabbit Landing Page</a>
+                <a href="#rabbit-breeds">Rabbit Breeds</a>
+                <a href="#rabbit-comparison">Breed Comparison</a>
+            </div>
+        </div>
+        <div class="section-wrap footer-bottom">
+            <span class="footer-copyright">© 2026 PetSathi</span>
+            <span class="footer-credit">Made with ♥ for pets.</span>
+            <span class="footer-tagline">तुमच्या Pet चा विश्वासू साथी! 🐾</span>
+        </div>
+    </footer>
+  </main>
+
+  <button class="back-top" type="button" aria-label="Back to top" title="Back to top">↑</button>
+  <script>
+    (() => {
+      const navLinks = [...document.querySelectorAll('.quick-nav a')];
+      const sections = navLinks
+        .map(link => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
+      const backTop = document.querySelector('.back-top');
+
+      const updateOnScroll = () => {
+        const marker = window.scrollY + 150;
+        let current = sections[0];
+        sections.forEach(section => {
+          if (section.offsetTop <= marker) current = section;
+        });
+        navLinks.forEach(link => {
+          const isActive = link.getAttribute('href') === `#${current.id}`;
+          link.classList.toggle('active', isActive);
+          if (isActive) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+        backTop.classList.toggle('visible', window.scrollY > 450);
+      };
+
+      window.addEventListener('scroll', updateOnScroll, { passive: true });
+      window.addEventListener('resize', updateOnScroll);
+      backTop.addEventListener('click', () => {
+        document.querySelector('#top').scrollIntoView({ behavior: 'smooth' });
+      });
+      updateOnScroll();
+    })();
+  </script>
+</body>
+</html>
